@@ -1,4 +1,4 @@
-package com.github.rinotc.com.github.rinotc.kf.either
+package com.github.rinotc.kf.either
 
 sealed interface Either<out L, out R> {
 

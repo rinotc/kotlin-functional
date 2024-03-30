@@ -1,9 +1,9 @@
 package com.github.rinotc
 
-import com.github.rinotc.com.github.rinotc.kf.either.Either
-import com.github.rinotc.com.github.rinotc.kf.either.Left
-import com.github.rinotc.com.github.rinotc.kf.either.Right
-import com.github.rinotc.com.github.rinotc.kf.either.either
+import com.github.rinotc.kf.either.Either
+import com.github.rinotc.kf.either.Left
+import com.github.rinotc.kf.either.Right
+import com.github.rinotc.kf.either.either
 
 fun main() {
     val a: Either<String, Int> = Right(1)
