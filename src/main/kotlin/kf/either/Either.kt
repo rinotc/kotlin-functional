@@ -87,6 +87,7 @@ data class Left<L>(val value: L) : Either<L, Nothing>
 data class Right<R>(val value: R) : Either<Nothing, R>
 
 class LeftProjection<out L, out R>(private val e: Either<L, R>) {
+
     fun get(): L = when (e) {
         is Left -> e.value
         is Right -> throw NoSuchElementException("Right has no value")
