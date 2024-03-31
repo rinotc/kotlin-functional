@@ -4,6 +4,10 @@ sealed interface Either<out L, out R> {
 
     fun left(): LeftProjection<L, R> = LeftProjection(this)
 
+    fun isLeft(): Boolean = this is Left
+
+    fun isRight(): Boolean = this is Right
+
     fun <A> fold(ifLeft: (L) -> A, ifRight: (R) -> A): A = when (this) {
         is Left -> ifLeft(this.value)
         is Right -> ifRight(this.value)

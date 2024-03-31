@@ -18,6 +18,40 @@ import kotlin.test.assertTrue
 class EitherTest {
 
     @Nested
+    @DisplayName("#isLeft")
+    inner class IsLeft {
+
+        @Test
+        fun `should return true when the Either is Left`() {
+            val either: Either<String, Int> = Either.left("Error")
+            assertTrue(either.isLeft())
+        }
+
+        @Test
+        fun `should return false when the Either is Right`() {
+            val either: Either<String, Int> = Either.right(5)
+            assertFalse(either.isLeft())
+        }
+    }
+
+    @Nested
+    @DisplayName("#isRight")
+    inner class IsRight {
+
+        @Test
+        fun `should return false when the Either is Left`() {
+            val either: Either<String, Int> = Either.left("Error")
+            assertFalse(either.isRight())
+        }
+
+        @Test
+        fun `should return true when the Either is Right`() {
+            val either: Either<String, Int> = Either.right(5)
+            assertTrue(either.isRight())
+        }
+    }
+
+    @Nested
     @DisplayName("#fold")
     inner class Fold {
 
